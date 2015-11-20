@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "06E882F21BFDF9310007301B"
-               BuildableName = "SKDownloader.app"
-               BlueprintName = "SKDownloader"
+               BlueprintIdentifier = "06FCB25D1BFED07900F07D4E"
+               BuildableName = "SKDownloaderFramework.framework"
+               BlueprintName = "SKDownloaderFramework"
                ReferencedContainer = "container:SKDownloader.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -29,15 +29,6 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "06E882F21BFDF9310007301B"
-            BuildableName = "SKDownloader.app"
-            BlueprintName = "SKDownloader"
-            ReferencedContainer = "container:SKDownloader.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -51,16 +42,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "06E882F21BFDF9310007301B"
-            BuildableName = "SKDownloader.app"
-            BlueprintName = "SKDownloader"
+            BlueprintIdentifier = "06FCB25D1BFED07900F07D4E"
+            BuildableName = "SKDownloaderFramework.framework"
+            BlueprintName = "SKDownloaderFramework"
             ReferencedContainer = "container:SKDownloader.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -70,16 +60,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "06E882F21BFDF9310007301B"
-            BuildableName = "SKDownloader.app"
-            BlueprintName = "SKDownloader"
+            BlueprintIdentifier = "06FCB25D1BFED07900F07D4E"
+            BuildableName = "SKDownloaderFramework.framework"
+            BlueprintName = "SKDownloaderFramework"
             ReferencedContainer = "container:SKDownloader.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

@@ -1,0 +1,35 @@
+#----------------------------------------------------------------------------
+# Ignore these files when commiting to a git repository.
+#
+# See http://git-scm.com/docs/gitignore for more about ignoring files.
+#----------------------------------------------------------------------------
+
+# Mac finder artifacts
+.DS_Store
+
+# Idea project files
+.idea
+
+### Objective-C ###
+# Xcode
+
+#build/
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata
+*.xccheckout
+*.moved-aside
+DerivedData
+*.hmap
+*.ipa
+*.xcuserstate
+xcodebuild_output
+.last-build-date
+
+*.xcworkspace
