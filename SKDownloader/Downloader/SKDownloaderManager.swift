@@ -23,21 +23,21 @@ public class SKDownloaderManager: NSObject {
     }
     
     public func download(item: SKDownloadItem) {
-        if SKFileStore.SharedStore().download(item.downloadURL) {
+        if getSKFileStore().download(item.downloadURL) {
             SKDownloaderDatabase.sharedDatabase.addDownloadItem(item)
         }
     }
     
     public func pauseDownload(item: SKDownloadItem) -> Bool {
-        return  SKFileStore.SharedStore().pauseDownload(item.downloadURL)
+        return  getSKFileStore().pauseDownload(item.downloadURL)
     }
     
     public func resumeDownload(item: SKDownloadItem) -> Bool {
-        return  SKFileStore.SharedStore().resumeDownload(item.downloadURL)
+        return  getSKFileStore().resumeDownload(item.downloadURL)
     }
     
     public func cancelDownload(item: SKDownloadItem) -> Bool {
-        let cancel = SKFileStore.SharedStore().cancelDownload(item.downloadURL)
+        let cancel = getSKFileStore().cancelDownload(item.downloadURL)
         if cancel {
             SKDownloaderDatabase.sharedDatabase.deleteDownloadItem(item)
         }
@@ -45,7 +45,23 @@ public class SKDownloaderManager: NSObject {
     }
     
     public func isDownloading(item: SKDownloadItem) -> Bool {
-        return  SKFileStore.SharedStore().isDownloading(item.downloadURL)
+        return  getSKFileStore().isDownloading(item.downloadURL)
+    }
+    
+    public func getAllDownloadListItems() -> [SKDownloadListItem] {
+        var items: [SKDownloadListItem] = []
+        let tasks = getSKFileStore().allTasks()
+        for task in tasks {
+            guard let url = task.originalRequest?.URL?.absoluteString else { continue }
+            guard let downloadItem = SKDownloaderDatabase.sharedDatabase.realm.objects(SKDownloadItem.self).filter("downloadURL = %@", url).first else { continue }
+            let item = SKDownloadListItem(url: url, downloadItem: downloadItem, task: task)
+            items.append(item)
+        }
+        return items
+    }
+    
+    public func getSKFileStore() -> SKFileStore {
+        return SKFileStore.SharedStore()
     }
  
 }

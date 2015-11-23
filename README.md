@@ -22,3 +22,7 @@
         let w: SKDownloadListWindowController = SKDownloadListWindowController()
         w.showWindow(sender)
         
+
+#Carthage   
+  
+  github "SKDownloader/SKDownloaderFramework"     

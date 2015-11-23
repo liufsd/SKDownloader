@@ -137,16 +137,8 @@ public class SKDownloadListWindowController: NSWindowController, NSTableViewDele
     override public func showWindow(sender: AnyObject?) {
         super.showWindow(sender)
         self.items.removeAll(keepCapacity: false)
-        let tasks = self.fileStore.allTasks()
-        
-        for task in tasks {
-            guard let url = task.originalRequest?.URL?.absoluteString else { return }
-            guard let downloadItem = SKDownloaderDatabase.sharedDatabase.realm.objects(SKDownloadItem.self).filter("downloadURL = %@", url).first else { return }
-            let item = SKDownloadListItem(url: url, downloadItem: downloadItem, task: task)
-            self.items.append(item)
-        }
+        self.items = SKDownloaderManager.SharedDownloaderManager().getAllDownloadListItems()
         self.tableView.reloadData()
-
     }
     
     var fileStore: SKFileStore {

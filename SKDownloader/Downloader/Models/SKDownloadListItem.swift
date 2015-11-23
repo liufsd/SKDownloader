@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class SKDownloadListItem: NSObject {
+public class SKDownloadListItem: NSObject {
 
     let url: String
     let downloadItem: SKDownloadItem
